@@ -19,7 +19,7 @@
 <link rel="preload" href="img/galeria/menina.webp" as="image" fetchpriority="high">
 <link rel="preload" href="img/hero/parede.webp?v=2" as="image">
 <link rel="preload" href="img/galeria/poster.jpg?v=2" as="image">
-<link rel="stylesheet" href="css/site.css?v=5">
+<link rel="stylesheet" href="css/site.css?v=9">
 </head>
 <body>
 <div class="fundo" aria-hidden="true"></div>
@@ -93,6 +93,21 @@
     <figure class="rev"><div class="fr"><img src="img/f/des3.webp" alt="Retrato em grafite de menino com corte tigelinha" width="1000" height="1250"></div></figure>
     <figure class="rev"><div class="fr"><img src="img/f/des4.webp" alt="Desenho em caneta de gárgulas e mulher" width="1000" height="1250"></div></figure>
   </div>
+</section>
+
+<!-- LOJA: produtos da Uma Penca (umapenca.com/avenmor), gerados por tools/loja.py em js/loja.js + img/loja/.
+     Preços conferidos em 25/11/2026. Cada cartão leva direto à página do produto na loja. -->
+<section class="sec sec-tom" id="loja">
+  <div class="cab rev">
+    <h2>Loja</h2>
+    <p class="lead">As artes da Dani em camiseta, moletom, caneca e pôster. A compra é feita na Uma Penca, que produz e entrega a peça.</p>
+  </div>
+  <div class="filtros filtros-loja rev" role="group" aria-label="Filtrar produtos">
+    <button class="on" data-g="todos">Todos</button><button data-g="roupas">Roupas</button><button data-g="canecas">Canecas</button><button data-g="outros">Pôsteres e acessórios</button>
+  </div>
+  <ul class="produtos" id="produtos"></ul>
+  <div class="mais-wrap"><button class="bt bt-linha" id="maisLoja">Ver mais produtos</button></div>
+  <p class="loja-tudo"><a href="https://umapenca.com/avenmor/" target="_blank" rel="noopener">Abrir a loja completa na Uma Penca</a></p>
 </section>
 
 <section class="sec sec-tom" id="sobre">
@@ -208,7 +223,8 @@
 </div>
 
 <script src="js/pecas.js?v=1"></script>
+<script src="js/loja.js?v=3"></script>
 <script src="js/galeria.js?v=3"></script>
-<script src="js/main.js?v=4"></script>
+<script src="js/main.js?v=5"></script>
 </body>
 </html>

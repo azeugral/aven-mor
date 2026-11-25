@@ -56,8 +56,8 @@ p{margin:0;text-wrap:pretty}
 body::before{content:"";position:fixed;inset:0;background:url(../img/grao.png?v=1);opacity:.045;pointer-events:none;z-index:50}
 
 /* hero: galeria (modelo Veríssimo) sobre a parede adamascada do estúdio */
-.hero{height:100vh;height:100svh;min-height:600px;isolation:isolate}
-.gal-cena{position:absolute;inset:0;z-index:0;opacity:0;transition:opacity 1.4s var(--ease);-webkit-mask-image:linear-gradient(to bottom,#000 72%,transparent 100%);mask-image:linear-gradient(to bottom,#000 72%,transparent 100%)}
+.hero{height:100vh;height:100svh;min-height:600px;isolation:isolate;background:linear-gradient(to bottom,rgba(12,11,10,0) 55%,#0c0b0a 100%)}
+.gal-cena{position:absolute;inset:0;z-index:0;opacity:0;transition:opacity 1.4s var(--ease)}
 .hero.pronto .gal-cena{opacity:1}
 .gal-cena>img,.gal-cena>video,.gal-cena>canvas{position:absolute;inset:0;width:100%;height:100%;display:block}
 .g-poster,.g-video,.g-gl{opacity:0;transition:opacity .9s var(--ease)}
@@ -76,6 +76,8 @@ body::before{content:"";position:fixed;inset:0;background:url(../img/grao.png?v=
 /* seções */
 .sec{padding:clamp(80px,11vw,150px) var(--g)}
 .sec-tom{background-color:transparent}
+/* emenda do hero: o hero termina no preto liso da marca, e a 1ª seção parte dele e deixa a textura aparecer aos poucos */
+.hero+.sec::before{content:"";position:absolute;left:0;right:0;top:0;height:min(70vh,640px);background:linear-gradient(to bottom,#0c0b0a 0,rgba(12,11,10,.85) 22%,rgba(12,11,10,0) 100%);pointer-events:none;z-index:0}
 section[id]{scroll-margin-top:60px}
 .cab{max-width:760px;margin:0 auto clamp(36px,5vw,60px);text-align:center}
 .lead{margin-top:18px;color:var(--apoio);font-size:18px}
@@ -124,6 +126,31 @@ section[id]{scroll-margin-top:60px}
 .seis .fr img{height:auto;aspect-ratio:4/5;box-shadow:0 0 0 1px var(--ouro-fio),inset 0 0 0 1px #000}
 .seis figcaption{margin-top:16px;display:flex;flex-direction:column;align-items:center;gap:12px;text-align:center;font:600 18px/1.2 var(--serif);text-transform:uppercase;letter-spacing:.05em}
 .seis .bt{min-height:44px;padding:0 22px;font-size:14px}
+/* loja (Uma Penca): foto do produto inteira, com o fundo original; no hover, a 2ª foto */
+.produtos{list-style:none;margin:0 auto;padding:0;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:clamp(18px,2vw,30px);max-width:1180px}
+.produto[hidden]{display:none!important}
+.produto-foto{position:relative;display:block;aspect-ratio:2/3;overflow:hidden;background:#e9e9ea;box-shadow:0 0 0 1px var(--ouro-fio),0 22px 36px -24px #000;transition:box-shadow .3s var(--ease)}
+.produto-foto img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;-webkit-user-drag:none;transition:opacity .3s var(--ease)}
+.produto-foto .alt{opacity:0}
+.produto:hover .produto-foto .alt,.produto-foto:focus-visible .alt{opacity:1}
+.produto:hover .produto-foto{box-shadow:0 0 0 1px rgba(201,164,92,.75),0 22px 36px -24px #000}
+.produto-info{display:flex;flex-direction:column;align-items:center;text-align:center;padding-top:16px}
+.produto-cat{margin:0 0 6px;font:500 12px/1.3 var(--sans);letter-spacing:.08em;text-transform:uppercase;color:var(--apoio)}
+.produto h3{font-size:17px;line-height:1.2;text-transform:uppercase;letter-spacing:.04em;min-height:2.4em;display:flex;align-items:center;justify-content:center}
+.produto h3 a{color:var(--osso);text-decoration:none}
+.preco{margin:8px 0 14px;font:600 16px/1 var(--sans);color:var(--ouro2)}
+.produto .bt{min-height:42px;padding:0 24px;font-size:14px}
+.loja-tudo{text-align:center;margin:26px 0 0;font-size:14px}
+.loja-tudo a{color:var(--apoio);text-underline-offset:4px;transition:color .3s var(--ease)}
+.loja-tudo a:hover{color:var(--osso)}
+@media (max-width:1024px){.produtos{grid-template-columns:repeat(3,minmax(0,1fr))}}
+@media (max-width:700px){
+  .produtos{grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+  .produto h3{font-size:14px}
+  .produto-cat{font-size:11px;letter-spacing:.05em}
+  .preco{font-size:15px;margin:6px 0 12px}
+  .produto .bt{min-height:40px;padding:0 18px;font-size:13px}
+}
 .regras{margin-top:clamp(36px,5vw,56px)}
 .chips-3{display:grid;grid-template-columns:repeat(3,1fr)}
 .chips-3 span{text-align:center}
@@ -239,15 +266,12 @@ section[id]{scroll-margin-top:60px}
 }
 /* celular e tablet em pé: a cena 4:5 em cima, o texto embaixo */
 @media (max-width:860px) and (min-height:521px){
-  .hero{height:auto;min-height:100svh;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:76px 0 30px}
-  .gal-cena{position:relative;inset:auto;width:100%;max-width:560px;aspect-ratio:4/5;-webkit-mask-image:linear-gradient(to bottom,transparent 0,#000 9%,#000 88%,transparent 100%),linear-gradient(to right,transparent 0,#000 6%,#000 94%,transparent 100%);-webkit-mask-composite:source-in;mask-image:linear-gradient(to bottom,transparent 0,#000 9%,#000 88%,transparent 100%),linear-gradient(to right,transparent 0,#000 6%,#000 94%,transparent 100%);mask-composite:intersect}
+  .hero{background:#0c0b0a;height:auto;min-height:100svh;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:76px 0 30px}
+  .gal-cena{position:relative;inset:auto;width:100%;max-width:560px;aspect-ratio:4/5}
   .gal-txt{position:relative;left:auto;right:auto;bottom:auto;width:100%;padding:0 16px;margin-top:10px}
   .nome img{width:min(80vw,420px)}
   .bts{width:100%;max-width:420px;gap:8px;margin-top:18px}
   .bts .bt{min-width:0;padding:0 10px;font-size:14px;white-space:nowrap}
-}
-@media (max-width:560px) and (min-height:521px){
-  .gal-cena{-webkit-mask-image:linear-gradient(to bottom,transparent 0,#000 9%,#000 88%,transparent 100%);-webkit-mask-composite:source-over;mask-image:linear-gradient(to bottom,transparent 0,#000 9%,#000 88%,transparent 100%);mask-composite:add}
 }
 /* paisagem baixa (celular deitado) */
 @media (max-height:520px) and (orientation:landscape){
@@ -269,3 +293,4 @@ section[id]{scroll-margin-top:60px}
 @media (max-width:760px){
   .seis figcaption span{min-height:2.4em;display:flex;align-items:center;justify-content:center}
 }
+@media (max-width:760px){.filtros-loja button:first-child{grid-column:auto}}

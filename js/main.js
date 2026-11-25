@@ -111,9 +111,9 @@
     observar();
   }
   aplicar(); observar();
-  d.querySelectorAll('.filtros button').forEach(function (b) {
+  d.querySelectorAll('#trabalhos .filtros button').forEach(function (b) {
     b.addEventListener('click', function () {
-      d.querySelectorAll('.filtros button').forEach(function (x) { x.classList.toggle('on', x === b); });
+      d.querySelectorAll('#trabalhos .filtros button').forEach(function (x) { x.classList.toggle('on', x === b); });
       filtro = b.dataset.f; limite = passoN; aplicar();
       itens.forEach(function (el) { if (!el.classList.contains('sai')) el.classList.add('vis'); });
       grade.animate && grade.animate([{ opacity: .2, transform: 'translateY(10px)' }, { opacity: 1, transform: 'none' }], { duration: 500, easing: 'cubic-bezier(.16,.84,.32,1)' });
@@ -176,4 +176,40 @@
     l.push('', 'Vou mandar as referências e a foto do local aqui na conversa.', '(pedido enviado pelo site)');
     window.open('https://wa.me/' + WA + '?text=' + encodeURIComponent(l.join('\n')), '_blank', 'noopener');
   });
+})();
+
+/* loja: vitrine da Uma Penca (dados em js/loja.js); cada cartão abre o produto na loja */
+(function () {
+  var d = document, ul = d.getElementById('produtos'), mais = d.getElementById('maisLoja');
+  if (!ul || !window.LOJA) return;
+  var passo = window.matchMedia('(max-width:700px)').matches ? 6 : 8, limite = passo, g = 'todos', itens = [];
+  function esc(s) { return String(s).replace(/[&<>"]/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]; }); }
+  window.LOJA.forEach(function (p) {
+    var li = d.createElement('li'); li.className = 'produto'; li.dataset.g = p.g;
+    var nome = p.c + ' ' + p.n;
+    li.innerHTML =
+      '<a class="produto-foto" href="' + esc(p.u) + '" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">' +
+      '<img src="img/loja/' + p.id + '-1.webp" alt="" width="600" height="900" draggable="false">' +
+      (p.b ? '<img class="alt" src="img/loja/' + p.id + '-2.webp" alt="" width="600" height="900" draggable="false">' : '') + '</a>' +
+      '<div class="produto-info"><p class="produto-cat">' + esc(p.c) + '</p>' +
+      '<h3><a href="' + esc(p.u) + '" target="_blank" rel="noopener">' + esc(p.n) + '</a></h3>' +
+      '<p class="preco">' + esc(p.p) + '</p>' +
+      '<a class="bt bt-linha" href="' + esc(p.u) + '" target="_blank" rel="noopener" aria-label="Comprar ' + esc(nome) + ', ' + esc(p.p) + ', na Uma Penca">Comprar</a></div>';
+    ul.appendChild(li); itens.push(li);
+  });
+  function aplicar() {
+    var v = itens.filter(function (el) { return g === 'todos' || el.dataset.g === g; });
+    itens.forEach(function (el) { el.hidden = true; });
+    v.slice(0, limite).forEach(function (el) { el.hidden = false; });
+    mais.hidden = v.length <= limite;
+  }
+  d.querySelectorAll('.filtros-loja button').forEach(function (b) {
+    b.addEventListener('click', function () {
+      d.querySelectorAll('.filtros-loja button').forEach(function (x) { x.classList.toggle('on', x === b); });
+      g = b.dataset.g; limite = passo; aplicar();
+      ul.animate && ul.animate([{ opacity: .2, transform: 'translateY(10px)' }, { opacity: 1, transform: 'none' }], { duration: 500, easing: 'cubic-bezier(.16,.84,.32,1)' });
+    });
+  });
+  mais.addEventListener('click', function () { limite += passo; aplicar(); });
+  aplicar();
 })();
