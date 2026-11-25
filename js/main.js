@@ -124,7 +124,7 @@
   /* lightbox */
   var lb = d.getElementById('lb'), lbImg = d.getElementById('lbImg'), atualLb = 0, lista = [];
   function abrirLb(i) { lista = visiveis().map(function (el) { return +el.dataset.i; }); atualLb = Math.max(0, lista.indexOf(i)); mostrar(); lb.hidden = false; d.body.style.overflow = 'hidden'; }
-  function mostrar() { var p = PECAS[lista[atualLb]]; d.getElementById('lbTit').textContent = p.l; lbImg.src = 'img/g/' + p.c + '.webp'; lbImg.alt = p.l + ', tatuagem de Dani, Aven Mor'; }
+  function mostrar() { var p = PECAS[lista[atualLb]]; lbImg.src = 'img/g/' + p.c + '.webp'; lbImg.alt = p.l + ', tatuagem de Dani, Aven Mor'; }
   function passo(n) { atualLb = (atualLb + n + lista.length) % lista.length; mostrar(); }
   function fechar() { lb.hidden = true; d.body.style.overflow = ''; }
   grade.addEventListener('click', function (e) { var f = e.target.closest('.item'); if (f) abrirLb(+f.dataset.i); });
