@@ -129,16 +129,24 @@ section[id]{scroll-margin-top:60px}
 /* loja (Uma Penca): foto do produto inteira, com o fundo original; no hover, a 2ª foto */
 .produtos{list-style:none;margin:0 auto;padding:0;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:clamp(18px,2vw,30px);max-width:1180px}
 .produto[hidden]{display:none!important}
-.produto-foto{position:relative;display:block;aspect-ratio:2/3;overflow:hidden;background:#e9e9ea;box-shadow:0 0 0 1px var(--ouro-fio),0 22px 36px -24px #000;transition:box-shadow .3s var(--ease)}
-.produto-foto img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;-webkit-user-drag:none;transition:opacity .3s var(--ease)}
-.produto-foto .alt{opacity:0}
-.produto:hover .produto-foto .alt,.produto-foto:focus-visible .alt{opacity:1}
-.produto:hover .produto-foto{box-shadow:0 0 0 1px rgba(201,164,92,.75),0 22px 36px -24px #000}
-.produto-info{display:flex;flex-direction:column;align-items:center;text-align:center;padding-top:16px}
+/* cada produto num quadro como o portfólio: filete preto, passe-partout escuro e o fio dourado em volta da foto */
+.produto-foto{display:block;padding:clamp(7px,.95vw,13px);background:linear-gradient(160deg,#1d1914,#12100d);border:clamp(4px,.5vw,7px) solid #060505;box-shadow:0 0 0 1px rgba(232,225,212,.1),0 22px 36px -24px #000;transition:box-shadow .3s var(--ease)}
+.janela{position:relative;display:block;aspect-ratio:2/3;overflow:hidden;background:#e9e9ea;box-shadow:0 0 0 1px var(--ouro-fio),inset 0 0 0 1px #000}
+.janela img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;-webkit-user-drag:none;transition:opacity .3s var(--ease)}
+.janela .alt{opacity:0}
+.produto:hover .janela .alt,.produto-foto:focus-visible .janela .alt{opacity:1}
+.produto:hover .produto-foto{box-shadow:0 0 0 1px rgba(201,164,92,.6),0 22px 36px -24px #000}
+.produto{display:flex;flex-direction:column}
+.produto-info{flex:1;display:flex;flex-direction:column;align-items:center;text-align:center;padding-top:16px}
+.produto-info .bt{margin-top:auto}
 .produto-cat{margin:0 0 6px;font:500 12px/1.3 var(--sans);letter-spacing:.08em;text-transform:uppercase;color:var(--apoio)}
 .produto h3{font-size:17px;line-height:1.2;text-transform:uppercase;letter-spacing:.04em;min-height:2.4em;display:flex;align-items:center;justify-content:center}
 .produto h3 a{color:var(--osso);text-decoration:none}
-.preco{margin:8px 0 14px;font:600 16px/1 var(--sans);color:var(--ouro2)}
+.preco{margin:8px 0 6px;font:600 16px/1 var(--sans);color:var(--ouro2)}
+.opcoes{margin:0 0 14px;min-height:1.4em;font:500 13px/1.4 var(--sans);color:var(--apoio)}
+.tamanhos{list-style:none;margin:2px 0 14px;padding:0;display:flex;justify-content:center;gap:6px}
+.tamanhos li{display:flex;flex-direction:column;align-items:center;gap:3px;padding:6px 8px;border:1px solid var(--linha);font:600 12px/1 var(--sans);color:var(--osso)}
+.tamanhos li span{font-weight:500;color:var(--apoio);font-size:11px}
 .produto .bt{min-height:42px;padding:0 24px;font-size:14px}
 .loja-tudo{text-align:center;margin:26px 0 0;font-size:14px}
 .loja-tudo a{color:var(--apoio);text-underline-offset:4px;transition:color .3s var(--ease)}
@@ -148,7 +156,11 @@ section[id]{scroll-margin-top:60px}
   .produtos{grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
   .produto h3{font-size:14px}
   .produto-cat{font-size:11px;letter-spacing:.05em}
-  .preco{font-size:15px;margin:6px 0 12px}
+  .preco{font-size:15px;margin:6px 0 5px}
+  .opcoes{font-size:12px;margin-bottom:12px;min-height:2.8em}
+  .tamanhos{gap:4px;margin-bottom:12px}
+  .tamanhos li{padding:5px 4px;font-size:11px}
+  .tamanhos li span{font-size:10px}
   .produto .bt{min-height:40px;padding:0 18px;font-size:13px}
 }
 .regras{margin-top:clamp(36px,5vw,56px)}

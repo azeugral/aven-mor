@@ -5,7 +5,7 @@
   /* ---------- hero "galeria" (modelo Veríssimo) sobre o preto da marca: as peças da Dani em quadros; cada uma cobre a anterior
      em tinta, um quadro depois do outro. WebGL no PC, MP4 no celular em pé ---------- */
   var reduz = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  var hero = d.querySelector('.gal'), cena = d.querySelector('.gal-cena'), V = '?v=5', INTRO = 2.4, orn = new Image();
+  var hero = d.querySelector('.gal'), cena = d.querySelector('.gal-cena'), V = '?v=6', INTRO = 2.4, orn = new Image();
   orn.src = 'img/orn/lua-gl.webp' + V;
   var parede = new Image(); parede.src = 'img/hero/parede.webp?v=2';
   var baixa = function () { return innerHeight <= 520 && innerWidth > innerHeight; };
@@ -188,12 +188,14 @@
     var li = d.createElement('li'); li.className = 'produto'; li.dataset.g = p.g;
     var nome = p.c + ' ' + p.n;
     li.innerHTML =
-      '<a class="produto-foto" href="' + esc(p.u) + '" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">' +
+      '<a class="produto-foto" href="' + esc(p.u) + '" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true"><span class="janela">' +
       '<img src="img/loja/' + p.id + '-1.webp" alt="" width="600" height="900" draggable="false">' +
-      (p.b ? '<img class="alt" src="img/loja/' + p.id + '-2.webp" alt="" width="600" height="900" draggable="false">' : '') + '</a>' +
+      (p.b ? '<img class="alt" src="img/loja/' + p.id + '-2.webp" alt="" width="600" height="900" draggable="false">' : '') + '</span></a>' +
       '<div class="produto-info"><p class="produto-cat">' + esc(p.c) + '</p>' +
       '<h3><a href="' + esc(p.u) + '" target="_blank" rel="noopener">' + esc(p.n) + '</a></h3>' +
       '<p class="preco">' + esc(p.p) + '</p>' +
+      (p.t && p.t.length ? '<ul class="tamanhos" aria-label="Tamanhos e preços">' + p.t.map(function (t) { var m = t[0].match(/^(\S+)\s*\((.*)\)$/); return '<li>' + esc(m ? m[1] : t[0]) + '<span>' + esc(t[1].replace('R$ ', 'R$ ')) + '</span></li>'; }).join('') + '</ul>'
+        : '<p class="opcoes">' + esc(p.o || '') + '</p>') +
       '<a class="bt bt-linha" href="' + esc(p.u) + '" target="_blank" rel="noopener" aria-label="Comprar ' + esc(nome) + ', ' + esc(p.p) + ', na Uma Penca">Comprar</a></div>';
     ul.appendChild(li); itens.push(li);
   });
