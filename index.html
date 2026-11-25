@@ -1,0 +1,219 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Aven Mor · Dark Tattoo · Dani, dark art e blackwork em Suzano, SP</title>
+<meta name="description" content="Dani, da Aven Mor Dark Tattoo: dark art e blackwork em preto e cinza em Suzano e São Paulo. Fechamentos, ceifadores, caveiras, criaturas e projetos autorais.">
+<meta name="robots" content="noindex">
+<meta name="theme-color" content="#0c0b0a">
+<meta property="og:title" content="Aven Mor · Dark Tattoo">
+<meta property="og:description" content="Dark art e blackwork da Dani, em Suzano e São Paulo.">
+<meta property="og:image" content="https://azeugral.github.io/aven-mor/img/og.jpg">
+<meta property="og:url" content="https://azeugral.github.io/aven-mor/">
+<meta property="og:type" content="website">
+<link rel="icon" href="favicon-32.png" sizes="32x32">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="preload" href="fonts/cinzel-600-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="fonts/manrope-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="img/galeria/menina.webp" as="image" fetchpriority="high">
+<link rel="preload" href="img/hero/parede.webp" as="image">
+<link rel="preload" href="img/galeria/poster.jpg" as="image">
+<link rel="stylesheet" href="css/site.css?v=1">
+</head>
+<body>
+<header class="topo" id="topo">
+  <nav class="menu menu-e" aria-label="Seções">
+    <a href="#trabalhos">Trabalhos</a><a href="#disponiveis">Disponíveis</a><a href="#papel">No papel</a>
+  </nav>
+  <a class="marca" href="#inicio" aria-label="Aven Mor Dark Tattoo, início"><img src="img/logo.svg" alt="" width="281" height="99"></a>
+  <nav class="menu menu-d" aria-label="Mais">
+    <a href="#sobre">Sobre</a><a href="#agenda">Agenda</a><a class="mc" href="#marcar">Pedir orçamento</a>
+  </nav>
+  <button class="burger" id="burger" aria-label="Abrir menu" aria-expanded="false"><span></span><span></span></button>
+</header>
+<div class="gaveta" id="gaveta" hidden>
+  <a href="#trabalhos">Trabalhos</a><a href="#disponiveis">Disponíveis</a><a href="#papel">No papel</a>
+  <a href="#sobre">Sobre</a><a href="#agenda">Agenda</a><a href="#estudio">Estúdio</a><a class="bt bt-cor" href="#marcar">Pedir orçamento</a>
+</div>
+
+<main>
+<section class="hero gal" id="inicio" aria-label="Aven Mor Dark Tattoo, dark art e blackwork da Dani">
+  <div class="gal-cena" role="img" aria-label="Tatuagens da Dani em quadros de filete dourado sobre o preto, com a lua crescente da marca atrás do quadro central; em cada quadro uma peça dá lugar à seguinte, coberta em tinta">
+    <img class="g-poster" src="img/galeria/poster.jpg" alt="" width="1080" height="1350">
+    <video class="g-video" muted playsinline preload="none" aria-hidden="true"></video>
+    <canvas class="g-gl" aria-hidden="true"></canvas>
+  </div>
+  <div class="gal-txt">
+    <p class="chapeu"><span>Dark art · Blackwork</span><i> · </i><span>Suzano e São Paulo</span></p>
+    <h1 class="nome"><img src="img/logo.svg" alt="Aven Mor Dark Tattoo" width="2911" height="1014"></h1>
+    <div class="bts"><a class="bt bt-cor" href="#marcar">Pedir orçamento</a><a class="bt bt-linha" href="#trabalhos">Ver trabalhos</a></div>
+  </div>
+</section>
+
+<section class="sec" id="trabalhos">
+  <img class="orn orn-titulo" src="img/orn/lua.webp" alt="" aria-hidden="true">
+  <div class="cab rev">
+    <h2>Trabalhos</h2>
+    <p class="lead">Preto sólido, sombra e textura, do antebraço às costas fechadas. Toque numa peça para ver em tamanho grande.</p>
+  </div>
+  <div class="filtros rev" role="group" aria-label="Filtrar trabalhos">
+    <button class="on" data-f="todos">Todos</button><button data-f="fech">Fechamentos</button><button data-f="morte">Ceifadores e caveiras</button><button data-f="criaturas">Criaturas</button><button data-f="mulheres">Mulheres sombrias</button>
+  </div>
+  <div class="grade" id="grade"></div>
+  <div class="mais-wrap"><button class="bt bt-linha" id="mais">Ver mais trabalhos</button></div>
+</section>
+
+<section class="sec sec-tom" id="disponiveis">
+  <img class="orn orn-canto orn-e" src="img/orn/corvo.webp" alt="" aria-hidden="true">
+  <img class="orn orn-canto orn-d" src="img/orn/corvo.webp" alt="" aria-hidden="true">
+  <div class="cab rev">
+    <h2>Artes disponíveis</h2>
+    <p class="citacao">“Tatuagem não é produto de prateleira.”</p>
+    <p class="lead">Projetos autorais da Dani, feitos uma vez só. Quando alguém tatua, a arte sai da lista.</p>
+  </div>
+  <div class="seis">
+    <figure class="rev"><div class="fr"><img src="img/d/10.webp" alt="Caveira demoníaca de chifres, arte para peito ou costas" width="960" height="1200" draggable="false"></div><figcaption><span>Caveira coroada</span><button class="bt bt-linha" data-arte="Caveira coroada (peito ou costas)">Quero esta</button></figcaption></figure>
+    <figure class="rev"><div class="fr"><img src="img/d/13.webp" alt="Ceifador encapuzado com foice, arte para o ombro" width="960" height="1200" draggable="false"></div><figcaption><span>O ceifador</span><button class="bt bt-linha" data-arte="O ceifador (ombro)">Quero esta</button></figcaption></figure>
+    <figure class="rev"><div class="fr"><img src="img/d/14.webp" alt="Caveiras em fumaça preta, arte para o peito" width="960" height="1200" draggable="false"></div><figcaption><span>Caveiras em fumaça</span><button class="bt bt-linha" data-arte="Caveiras em fumaça (peito)">Quero esta</button></figcaption></figure>
+    <figure class="rev"><div class="fr"><img src="img/d/27.webp" alt="Caveira com garras, arte para o braço inteiro" width="960" height="1200" draggable="false"></div><figcaption><span>Garras</span><button class="bt bt-linha" data-arte="Garras (braço)">Quero esta</button></figcaption></figure>
+    <figure class="rev"><div class="fr"><img src="img/d/28.webp" alt="Bode de chifres com tentáculos, arte para o braço" width="960" height="1200" draggable="false"></div><figcaption><span>O bode</span><button class="bt bt-linha" data-arte="O bode (braço)">Quero esta</button></figcaption></figure>
+    <figure class="rev"><div class="fr"><img src="img/d/46.webp" alt="Caveira em pinceladas pretas, arte para o antebraço" width="960" height="1200" draggable="false"></div><figcaption><span>Pincelada</span><button class="bt bt-linha" data-arte="Pincelada (antebraço)">Quero esta</button></figcaption></figure>
+  </div>
+</section>
+
+<section class="sec" id="papel">
+  <img class="orn orn-titulo" src="img/orn/lua.webp" alt="" aria-hidden="true">
+  <div class="cab rev">
+    <h2>No papel</h2>
+    <p class="lead">Antes da agulha, o lápis. A Dani desenha à mão, em grafite, e cada projeto autoral nasce assim.</p>
+  </div>
+  <div class="quatro">
+    <figure class="rev"><div class="fr"><img src="img/f/des1.webp" alt="Retrato em grafite de cantor gritando ao microfone" width="1000" height="1250"></div></figure>
+    <figure class="rev"><div class="fr"><img src="img/f/des2.webp" alt="Retrato em grafite de músico de óculos redondos sorrindo" width="1000" height="1250"></div></figure>
+    <figure class="rev"><div class="fr"><img src="img/f/des3.webp" alt="Retrato em grafite de menino com corte tigelinha" width="1000" height="1250"></div></figure>
+    <figure class="rev"><div class="fr"><img src="img/f/des4.webp" alt="Desenho em caneta de gárgulas e mulher" width="1000" height="1250"></div></figure>
+  </div>
+</section>
+
+<section class="sec sec-tom" id="sobre">
+  <img class="orn orn-canto orn-e" src="img/orn/corvo.webp" alt="" aria-hidden="true">
+  <img class="orn orn-canto orn-d" src="img/orn/corvo.webp" alt="" aria-hidden="true">
+  <div class="sobre">
+    <div class="fr sobre-foto rev"><img src="img/f/sobre.webp" alt="Retrato em preto e branco da Dani, tatuadora da Aven Mor" width="1000" height="1250"></div>
+    <div class="sobre-txt rev">
+      <h2>Sobre a Dani</h2>
+      <p>Dani é a tatuadora por trás da Aven Mor Dark Tattoo, o estúdio dela em Suzano, na Grande São Paulo.</p>
+      <p>O trabalho é dark art em preto e cinza: ceifadores, caveiras, demônios, bruxas e corvos, em peças pensadas para acompanhar o movimento do corpo. Muitos projetos viram fechamento de braço, perna ou costas, em várias sessões.</p>
+      <p>Cada arte é criada para quem vai usar. Tatuar é arte, entrega e conexão, e o atendimento é um por vez.</p>
+      <a class="bt bt-linha" href="https://www.instagram.com/darktattoo.dani/" target="_blank" rel="noopener">Ver o Instagram</a>
+    </div>
+  </div>
+</section>
+
+<section class="sec" id="agenda">
+  <img class="orn orn-titulo" src="img/orn/lua.webp" alt="" aria-hidden="true">
+  <div class="cab rev">
+    <h2>Agenda</h2>
+    <p class="lead">Agenda aberta em Suzano e São Paulo. Fora de casa, a Dani tatua em temporadas de guest.</p>
+  </div>
+  <ol class="blocos">
+    <li class="rev"><h3>Suzano</h3><p>No estúdio Aven Mor, com hora marcada.</p></li>
+    <li class="rev"><h3>São Paulo</h3><p>Atendimento também no Tatuapé.</p></li>
+    <li class="rev"><h3>Rio de Janeiro</h3><p>Próximo guest: 13 a 22 de março de 2027.</p></li>
+    <li class="rev"><h3>Já passou por</h3><p>Curitiba, Brasília, Buenos Aires e Tattoo Week.</p></li>
+  </ol>
+</section>
+
+<section class="sec sec-tom" id="estudio">
+  <img class="orn orn-canto orn-e" src="img/orn/corvo.webp" alt="" aria-hidden="true">
+  <img class="orn orn-canto orn-d" src="img/orn/corvo.webp" alt="" aria-hidden="true">
+  <div class="cab rev">
+    <h2>Estúdio</h2>
+    <p class="lead">Aven Mor Tattoo Studio, em Suzano. Atendimento acolhedor, uma pessoa por vez.</p>
+  </div>
+  <div class="estudio rev">
+    <div class="mapa"><iframe title="Mapa de Suzano, São Paulo" src="https://www.google.com/maps?q=Suzano,+SP&amp;output=embed" allowfullscreen referrerpolicy="no-referrer-when-downgrade"></iframe></div>
+    <dl class="dados">
+      <div><dt>Onde</dt><dd>Suzano · São Paulo</dd></div>
+      <div><dt>Orçamentos</dt><dd><a href="https://wa.me/5511973143628" target="_blank" rel="noopener">(11) 97314-3628</a></dd></div>
+      <div><dt>Instagram</dt><dd><a href="https://www.instagram.com/darktattoo.dani/" target="_blank" rel="noopener">@darktattoo.dani</a></dd></div>
+    </dl>
+  </div>
+  <ol class="blocos regras">
+    <li class="rev"><h3>Sinal</h3><p>A data se confirma com 30% do valor.</p></li>
+    <li class="rev"><h3>Orçamento</h3><p>Vale por 30 dias depois de enviado.</p></li>
+    <li class="rev"><h3>No dia</h3><p>O restante é pago na sessão.</p></li>
+    <li class="rev"><h3>Pagamento</h3><p>Pix, débito, crédito ou dinheiro.</p></li>
+  </ol>
+</section>
+
+<section class="sec" id="marcar">
+  <img class="orn orn-titulo" src="img/orn/lua.webp" alt="" aria-hidden="true">
+  <div class="cab rev">
+    <h2>Pedir orçamento</h2>
+    <p class="lead">Mande tudo de uma vez e a resposta vem mais rápido. O pedido chega pronto no WhatsApp do estúdio.</p>
+  </div>
+  <ol class="passos">
+    <li class="rev"><h3>A ideia</h3><p>O tema, ou uma das artes disponíveis.</p></li>
+    <li class="rev"><h3>O local</h3><p>A região do corpo onde vai a tattoo.</p></li>
+    <li class="rev"><h3>O tamanho</h3><p>Em centímetros. Pequeno ou grande não basta.</p></li>
+    <li class="rev"><h3>Referências</h3><p>Na conversa, mande as imagens que tiver.</p></li>
+  </ol>
+  <form class="form rev" id="form" novalidate>
+    <label class="campo"><span>Nome</span><input name="nome" autocomplete="given-name" required></label>
+    <fieldset class="campo"><legend>Tema</legend>
+      <div class="chips">
+        <label><input type="radio" name="tema" value="Fechamento" checked><span>Fechamento</span></label>
+        <label><input type="radio" name="tema" value="Ceifadores e caveiras"><span>Ceifadores e caveiras</span></label>
+        <label><input type="radio" name="tema" value="Demônios e criaturas"><span>Criaturas</span></label>
+        <label><input type="radio" name="tema" value="Mulheres sombrias e bruxas"><span>Mulheres sombrias</span></label>
+        <label><input type="radio" name="tema" value="Arte disponível"><span>Arte disponível</span></label>
+        <label><input type="radio" name="tema" value="Ainda não sei"><span>Ainda não sei</span></label>
+      </div>
+    </fieldset>
+    <fieldset class="campo"><legend>Onde</legend>
+      <div class="chips chips-3">
+        <label><input type="radio" name="cidade" value="Suzano" checked><span>Suzano</span></label>
+        <label><input type="radio" name="cidade" value="São Paulo (Tatuapé)"><span>São Paulo</span></label>
+        <label><input type="radio" name="cidade" value="Guest no Rio de Janeiro"><span>Guest no Rio</span></label>
+      </div>
+    </fieldset>
+    <fieldset class="campo"><legend>É cobertura?</legend>
+      <div class="chips chips-2">
+        <label><input type="radio" name="cob" value="Não" checked><span>Não</span></label>
+        <label><input type="radio" name="cob" value="Sim"><span>Sim</span></label>
+      </div>
+    </fieldset>
+    <div class="duas">
+      <label class="campo"><span>Local do corpo</span><input name="local" placeholder="Ex.: antebraço direito"></label>
+      <label class="campo"><span>Tamanho aproximado</span><input name="tamanho" placeholder="Ex.: 18 cm de altura"></label>
+    </div>
+    <label class="campo"><span>Conte a sua ideia</span><textarea name="ideia" id="ideia" rows="4" placeholder="O tema, o que a tatuagem significa para você, se é para fechar o braço"></textarea></label>
+    <label class="campo"><span>Disponibilidade</span>
+      <select name="quando"><option>Qualquer dia</option><option>Dias de semana</option><option>Fins de semana</option></select></label>
+    <p class="erro" id="erro" hidden>Escreva o seu nome para continuar.</p>
+    <button class="bt bt-cor bt-largo" type="submit">Enviar pelo WhatsApp</button>
+  </form>
+</section>
+</main>
+
+<footer class="rodape">
+  <img class="r-logo" src="img/logo.svg" alt="Aven Mor Dark Tattoo" width="2911" height="1014">
+  <p class="r-info">Dark art · Blackwork · Suzano e São Paulo</p>
+  <p class="r-links"><a href="https://www.instagram.com/darktattoo.dani/" target="_blank" rel="noopener">Instagram</a><a href="https://wa.me/5511973143628" target="_blank" rel="noopener">WhatsApp</a><a href="https://umapenca.com/avenmor" target="_blank" rel="noopener">Loja</a></p>
+  <p class="r-lrgz">Site por <a href="https://lrgz.com.br">L R G Z</a></p>
+</footer>
+
+<div class="lb" id="lb" hidden role="dialog" aria-modal="true" aria-label="Trabalho ampliado">
+  <button class="lb-x" id="lbX" aria-label="Fechar">Fechar</button>
+  <button class="lb-n lb-p" id="lbP" aria-label="Anterior">‹</button>
+  <figure><img id="lbImg" alt=""><figcaption><span id="lbTit"></span><button class="bt bt-cor" id="lbQuero">Quero uma assim</button></figcaption></figure>
+  <button class="lb-n lb-s" id="lbS" aria-label="Próxima">›</button>
+</div>
+
+<script src="js/pecas.js?v=1"></script>
+<script src="js/galeria.js?v=1"></script>
+<script src="js/main.js?v=1"></script>
+</body>
+</html>
