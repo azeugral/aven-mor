@@ -11,8 +11,8 @@
 }
 *,*::before,*::after{box-sizing:border-box}
 [hidden]{display:none!important}
-html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
-body{margin:0;background:var(--bg);color:var(--osso);font:400 17px/1.65 var(--sans);overflow-x:hidden}
+html{background:#0c0b0a;scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{margin:0;background:transparent;color:var(--osso);font:400 17px/1.65 var(--sans);overflow-x:hidden}
 img{max-width:100%;height:auto;display:block}
 a{color:inherit}
 h1,h2,h3{font-family:var(--serif);font-weight:600;margin:0;text-wrap:balance}
@@ -46,20 +46,17 @@ p{margin:0;text-wrap:pretty}
 .gaveta a{text-decoration:none}
 .gaveta .bt{font:600 15px/1 var(--sans);text-transform:none;letter-spacing:.04em;margin-top:10px}
 
-/* adornos: a lua da marca (inteira, com o círculo) e a asa de corvo do flash dela, sempre inteiros dentro da seção */
+/* adorno: a lua da marca, inteira com o círculo, atrás dos títulos */
 .orn{position:absolute;z-index:0;pointer-events:none;user-select:none;height:auto}
 .sec,.hero,.rodape{position:relative;overflow:hidden}
 .sec>*:not(.orn),.rodape>*{position:relative;z-index:1}
 .orn-titulo{width:min(30vw,270px);left:50%;top:clamp(30px,4.4vw,60px);transform:translateX(-50%);opacity:.12}
-.orn-canto{width:min(24vw,330px);top:50%;opacity:.08}
-.orn-canto.orn-e{left:clamp(10px,2.2vw,44px);transform:translateY(-50%) scaleX(-1)}
-.orn-canto.orn-d{right:clamp(10px,2.2vw,44px);transform:translateY(-50%)}
-/* fundo próprio: fumaça de dark art em pontilhado, ladrilho sem costura em todas as seções */
-.sec::before,.rodape::before{content:"";position:absolute;inset:0;z-index:0;pointer-events:none;background:url(../img/fumaca.webp?v=1) 0 0/1600px auto repeat;opacity:.1}
-.sec-tom::before{background-position:-700px -380px;opacity:.085}
+/* fundo do site inteiro (como o Truz): preto quente com manchas suaves, fixo, + grão de filme */
+.fundo{position:fixed;inset:0;z-index:-1;pointer-events:none;background:var(--bg) url(../img/fundo.webp?v=1) center/cover no-repeat}
+body::before{content:"";position:fixed;inset:0;background:url(../img/grao.png?v=1);opacity:.045;pointer-events:none;z-index:50}
 
 /* hero: galeria (modelo Veríssimo) sobre a parede adamascada do estúdio */
-.hero{height:100vh;height:100svh;min-height:600px;isolation:isolate;background:var(--bg)}
+.hero{height:100vh;height:100svh;min-height:600px;isolation:isolate}
 .gal-cena{position:absolute;inset:0;z-index:0;opacity:0;transition:opacity 1.4s var(--ease)}
 .hero.pronto .gal-cena{opacity:1}
 .gal-cena>img,.gal-cena>video,.gal-cena>canvas{position:absolute;inset:0;width:100%;height:100%;display:block}
@@ -78,7 +75,7 @@ p{margin:0;text-wrap:pretty}
 
 /* seções */
 .sec{padding:clamp(80px,11vw,150px) var(--g)}
-.sec-tom{background-color:var(--tom)}
+.sec-tom{background-color:transparent}
 section[id]{scroll-margin-top:60px}
 .cab{max-width:760px;margin:0 auto clamp(36px,5vw,60px);text-align:center}
 .lead{margin-top:18px;color:var(--apoio);font-size:18px}
@@ -110,8 +107,8 @@ section[id]{scroll-margin-top:60px}
 
 /* blocos 2x2 */
 .blocos,.passos{list-style:none;margin:0 auto;padding:0;display:grid;grid-template-columns:repeat(4,1fr);gap:1px;max-width:1180px;background:var(--linha);border:1px solid var(--linha)}
-.blocos li,.passos li{background:var(--bg);padding:34px 26px;text-align:center}
-.sec-tom .blocos li,.sec-tom .passos li{background:var(--tom)}
+.blocos li,.passos li{background:rgba(12,11,10,.5);padding:34px 26px;text-align:center}
+
 .blocos h3,.passos h3{margin-bottom:12px}
 .blocos p,.passos p{color:var(--apoio);font-size:16px}
 
@@ -144,7 +141,7 @@ section[id]{scroll-margin-top:60px}
 .estudio{display:grid;grid-template-columns:1.3fr 1fr;max-width:1080px;margin:0 auto;border:1px solid var(--linha)}
 .mapa{min-height:380px;background:#050404}
 .mapa iframe{width:100%;height:100%;min-height:380px;border:0;filter:grayscale(1) invert(.92) contrast(.9)}
-.dados{margin:0;padding:34px;display:grid;align-content:center;gap:22px;background:var(--bg)}
+.dados{margin:0;padding:34px;display:grid;align-content:center;gap:22px;background:rgba(12,11,10,.5)}
 .dados div{border-bottom:1px solid var(--linha);padding-bottom:16px}
 .dados div:last-child{border:0;padding:0}
 .dados dt{font-size:13px;letter-spacing:.12em;text-transform:uppercase;color:var(--ouro);margin-bottom:6px}
@@ -214,10 +211,7 @@ section[id]{scroll-margin-top:60px}
   .filtros button{white-space:nowrap;padding:12px 6px;font-size:13px}
   .chips{display:grid;grid-template-columns:1fr 1fr}
   .chips span{text-align:center}
-  .orn-canto{width:30vw;opacity:.06}
-  .orn-canto.orn-e{left:6px}.orn-canto.orn-d{right:6px}
   .orn-titulo{width:46vw;opacity:.1}
-  .sec::before,.rodape::before{background-size:1100px auto}
   .grade{grid-template-columns:1fr 1fr;gap:10px}
   .quatro{gap:10px}
   .quatro figcaption{font-size:16px}

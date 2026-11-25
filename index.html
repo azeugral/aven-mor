@@ -17,11 +17,12 @@
 <link rel="preload" href="fonts/cinzel-600-latin.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="fonts/manrope-latin.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="img/galeria/menina.webp" as="image" fetchpriority="high">
-<link rel="preload" href="img/hero/parede.webp" as="image">
-<link rel="preload" href="img/galeria/poster.jpg" as="image">
-<link rel="stylesheet" href="css/site.css?v=2">
+<link rel="preload" href="img/hero/parede.webp?v=2" as="image">
+<link rel="preload" href="img/galeria/poster.jpg?v=2" as="image">
+<link rel="stylesheet" href="css/site.css?v=4">
 </head>
 <body>
+<div class="fundo" aria-hidden="true"></div>
 <header class="topo" id="topo">
   <nav class="menu menu-e" aria-label="Seções">
     <a href="#trabalhos">Trabalhos</a><a href="#disponiveis">Disponíveis</a><a href="#papel">No papel</a>
@@ -40,7 +41,7 @@
 <main>
 <section class="hero gal" id="inicio" aria-label="Aven Mor Dark Tattoo, dark art e blackwork da Dani">
   <div class="gal-cena" role="img" aria-label="Tatuagens da Dani em quadros de filete dourado sobre o preto, com a lua crescente da marca atrás do quadro central; em cada quadro uma peça dá lugar à seguinte, coberta em tinta">
-    <img class="g-poster" src="img/galeria/poster.jpg" alt="" width="1080" height="1350">
+    <img class="g-poster" src="img/galeria/poster.jpg?v=2" alt="" width="1080" height="1350">
     <video class="g-video" muted playsinline preload="none" aria-hidden="true"></video>
     <canvas class="g-gl" aria-hidden="true"></canvas>
   </div>
@@ -65,8 +66,6 @@
 </section>
 
 <section class="sec sec-tom" id="disponiveis">
-  <img class="orn orn-canto orn-e" src="img/orn/corvo.webp" alt="" aria-hidden="true">
-  <img class="orn orn-canto orn-d" src="img/orn/corvo.webp" alt="" aria-hidden="true">
   <div class="cab rev">
     <h2>Artes disponíveis</h2>
     <p class="citacao">“Tatuagem não é produto de prateleira.”</p>
@@ -97,8 +96,6 @@
 </section>
 
 <section class="sec sec-tom" id="sobre">
-  <img class="orn orn-canto orn-e" src="img/orn/corvo.webp" alt="" aria-hidden="true">
-  <img class="orn orn-canto orn-d" src="img/orn/corvo.webp" alt="" aria-hidden="true">
   <div class="sobre">
     <div class="fr sobre-foto rev"><img src="img/f/sobre.webp" alt="Dani tatuando no estúdio Aven Mor, de costas, com a camiseta da marca" width="1000" height="1250"></div>
     <div class="sobre-txt rev">
@@ -126,8 +123,6 @@
 </section>
 
 <section class="sec sec-tom" id="estudio">
-  <img class="orn orn-canto orn-e" src="img/orn/corvo.webp" alt="" aria-hidden="true">
-  <img class="orn orn-canto orn-d" src="img/orn/corvo.webp" alt="" aria-hidden="true">
   <div class="cab rev">
     <h2>Estúdio</h2>
     <p class="lead">Aven Mor Tattoo Studio, em Suzano. Atendimento acolhedor, uma pessoa por vez.</p>
@@ -213,7 +208,7 @@
 </div>
 
 <script src="js/pecas.js?v=1"></script>
-<script src="js/galeria.js?v=2"></script>
-<script src="js/main.js?v=3"></script>
+<script src="js/galeria.js?v=3"></script>
+<script src="js/main.js?v=4"></script>
 </body>
 </html>
