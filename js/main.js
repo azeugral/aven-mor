@@ -5,8 +5,8 @@
   /* ---------- hero "galeria" (modelo Veríssimo) sobre o preto da marca: as peças da Dani em quadros; cada uma cobre a anterior
      em tinta, um quadro depois do outro. WebGL no PC, MP4 no celular em pé ---------- */
   var reduz = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  var hero = d.querySelector('.gal'), cena = d.querySelector('.gal-cena'), V = '?v=2', INTRO = 2.4, orn = new Image();
-  orn.src = 'img/orn/lua.webp' + V;
+  var hero = d.querySelector('.gal'), cena = d.querySelector('.gal-cena'), V = '?v=3', INTRO = 2.4, orn = new Image();
+  orn.src = 'img/orn/lua-gl.webp' + V;
   var parede = new Image(); parede.src = 'img/hero/parede.webp';
   var baixa = function () { return innerHeight <= 520 && innerWidth > innerHeight; };
   var celPe = function () { return innerWidth <= 860 && !baixa(); };

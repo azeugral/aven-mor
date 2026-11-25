@@ -253,7 +253,7 @@
   var C = ['menina', 'lobo', 'rosto', 'tigre'];
   window.GALERIA = {
     /* a lua crescente com a estrela da marca Aven Mor gravada atrás do quadro central */
-    orn: { pc: { oa: .085, oc: [.37, .8], ol: [9, 0, .1] }, baixa: { oa: .08, oc: [.31, .66], ol: [9, 0, .1] }, cel: { oa: .085, oc: [.5, .9], ol: [9, 0, .1] } },
+    orn: { pc: { oa: .1, oc: [.37, .58], ol: [9, 0, .1] }, baixa: { oa: .09, oc: [.34, .5], ol: [9, 0, .1] }, cel: { oa: .1, oc: [.5, .74], ol: [9, 0, .1] } },
     pc: [
       { arts: C, x: 0, y: .37, w: .38, rot: -1.5, est: 3, off: 0, ordem: 0, c0: [.5, .4] },
       { arts: ['00', '04'], x: -.47, y: .34, w: .28, rot: 5, est: 4, off: 1.9, ordem: 1 },
