@@ -57,7 +57,7 @@ body::before{content:"";position:fixed;inset:0;background:url(../img/grao.png?v=
 
 /* hero: galeria (modelo Veríssimo) sobre a parede adamascada do estúdio */
 .hero{height:100vh;height:100svh;min-height:600px;isolation:isolate}
-.gal-cena{position:absolute;inset:0;z-index:0;opacity:0;transition:opacity 1.4s var(--ease)}
+.gal-cena{position:absolute;inset:0;z-index:0;opacity:0;transition:opacity 1.4s var(--ease);-webkit-mask-image:linear-gradient(to bottom,#000 72%,transparent 100%);mask-image:linear-gradient(to bottom,#000 72%,transparent 100%)}
 .hero.pronto .gal-cena{opacity:1}
 .gal-cena>img,.gal-cena>video,.gal-cena>canvas{position:absolute;inset:0;width:100%;height:100%;display:block}
 .g-poster,.g-video,.g-gl{opacity:0;transition:opacity .9s var(--ease)}
@@ -240,11 +240,14 @@ section[id]{scroll-margin-top:60px}
 /* celular e tablet em pé: a cena 4:5 em cima, o texto embaixo */
 @media (max-width:860px) and (min-height:521px){
   .hero{height:auto;min-height:100svh;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:76px 0 30px}
-  .gal-cena{position:relative;inset:auto;width:100%;max-width:560px;aspect-ratio:4/5}
+  .gal-cena{position:relative;inset:auto;width:100%;max-width:560px;aspect-ratio:4/5;-webkit-mask-image:linear-gradient(to bottom,transparent 0,#000 9%,#000 88%,transparent 100%),linear-gradient(to right,transparent 0,#000 6%,#000 94%,transparent 100%);-webkit-mask-composite:source-in;mask-image:linear-gradient(to bottom,transparent 0,#000 9%,#000 88%,transparent 100%),linear-gradient(to right,transparent 0,#000 6%,#000 94%,transparent 100%);mask-composite:intersect}
   .gal-txt{position:relative;left:auto;right:auto;bottom:auto;width:100%;padding:0 16px;margin-top:10px}
   .nome img{width:min(80vw,420px)}
   .bts{width:100%;max-width:420px;gap:8px;margin-top:18px}
   .bts .bt{min-width:0;padding:0 10px;font-size:14px;white-space:nowrap}
+}
+@media (max-width:560px) and (min-height:521px){
+  .gal-cena{-webkit-mask-image:linear-gradient(to bottom,transparent 0,#000 9%,#000 88%,transparent 100%);-webkit-mask-composite:source-over;mask-image:linear-gradient(to bottom,transparent 0,#000 9%,#000 88%,transparent 100%);mask-composite:add}
 }
 /* paisagem baixa (celular deitado) */
 @media (max-height:520px) and (orientation:landscape){
